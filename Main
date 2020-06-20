@@ -1,0 +1,64 @@
+package Main;
+
+import fabricas.FabricaComputador;
+import fabricas.FabricaComputadorApple;
+import fabricas.FabricaComputadorEstandar;
+import java.util.*;
+import productos.Computador;
+import productos.Portatil;
+
+/**
+ *
+ * @author X.V.I
+ */
+public class Main {
+    
+    public static int nComputador = 1;
+    public static int nPortatiles = 2;
+    
+    
+    public static void main(String[] args) {
+        
+        Scanner scan = new Scanner(System.in);
+        FabricaComputador fabrica ;
+        
+        Computador[] computadores = new Computador[nComputador];
+        Portatil[] portatiles = new Portatil[nPortatiles];
+        
+        String salida = null;
+        
+        try{
+            do{
+                
+                System.out.println("Desea utilizar productos estandar o de Apple\n1. Equipos Estandar\n2. Equipos Apple\nSeleccione");
+                String eleccion = scan.next();
+                
+                if(eleccion.equalsIgnoreCase("1")){
+                    fabrica = new FabricaComputadorEstandar();
+                }else{
+                    fabrica = new FabricaComputadorApple();
+                }
+                
+                for(int i = 0 ; i<computadores.length ; i++){
+                    computadores[i] = fabrica.creaComputador("Intel core i7", 16+i, 1000+i, "800W", "Gigabye b450m", "RTXXX 2080ti");
+                }
+                for(int i = 0 ; i<portatiles.length; i++){
+                     portatiles[i] = fabrica.creaPortatil("Intel core i5", 8+i, 1000+i, "500W", "Asus b450d", "Intel HD graphics");
+                }
+                
+                for(Computador computa : computadores){
+                   computa.mostrarCaracteristicas();
+                }
+                for(Portatil portatil : portatiles){
+                    portatil.mostrarCaracteristicas();
+                }
+                
+                System.out.println("Desea volver a usar el programa? S/N");
+                salida = scan.next();
+                
+            }while(salida.toUpperCase().equals("S"));
+        }catch (Exception e){
+            System.out.println("Escriba una opcion valida");
+        }
+    }
+}
