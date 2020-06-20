@@ -1,0 +1,13 @@
+package fabricas;
+
+import productos.Computador;
+import productos.Portatil;
+
+/**
+ *
+ * @author X.V.I
+ */
+public interface FabricaComputador {
+    Computador creaComputador(String procesador, int ram, int almacenamiento, String fuentePoder, String board, String gpu);
+    Portatil creaPortatil(String procesador, int ram, int almacenamiento, String bateria, String board, String gpu);
+}
