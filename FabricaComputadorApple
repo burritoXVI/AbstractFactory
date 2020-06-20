@@ -1,0 +1,27 @@
+package fabricas;
+
+import productos.Computador;
+
+import productos.ComputadorMac;
+import productos.Portatil;
+
+import productos.PortatilMac;
+
+
+/**
+ *
+ * @author X.V.I
+ */
+public class FabricaComputadorApple implements FabricaComputador {
+
+    @Override
+    public Computador creaComputador(String procesador, int ram, int almacenamiento, String fuentePoder, String board, String gpu) {
+        return new ComputadorMac(procesador, ram, almacenamiento, fuentePoder, board, gpu);
+    }
+
+    @Override
+    public Portatil creaPortatil(String procesador, int ram, int almacenamiento, String bateria, String board, String gpu) {
+        return new PortatilMac(procesador, ram, almacenamiento, bateria, board, gpu);
+    }
+    
+}
