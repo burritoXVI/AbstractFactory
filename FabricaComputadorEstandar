@@ -1,0 +1,27 @@
+package fabricas;
+
+import productos.Computador;
+import productos.ComputadorEstandar;
+import productos.Portatil;
+import productos.PortatilEstandar;
+
+
+/**
+ *
+ * @author X.V.I
+ */
+public class FabricaComputadorEstandar implements FabricaComputador {
+
+    @Override
+    public Computador creaComputador(String procesador, int ram, int almacenamiento, String fuentePoder, String board, String gpu) {
+        return new ComputadorEstandar(procesador, ram, almacenamiento, fuentePoder, board, gpu);
+    }
+
+    @Override
+    public Portatil creaPortatil(String procesador, int ram, int almacenamiento, String bateria, String board, String gpu) {
+        return new PortatilEstandar(procesador, ram, almacenamiento, bateria, board, gpu);
+    }
+    
+    
+    }
+    
