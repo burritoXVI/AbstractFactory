@@ -1,0 +1,19 @@
+package productos;
+
+/**
+ *
+ * @author X.V.I
+ */
+public class ComputadorMac extends Computador{
+
+    public ComputadorMac(String procesador, int ram, int almacenamiento, String board, String fuentePoder, String gpu) {
+        super(procesador, ram, almacenamiento, board, fuentePoder, gpu);
+    }
+
+    @Override
+    public void mostrarCaracteristicas() {
+        System.out.println("Computador Macintosh\nProcesador: "+ procesador +"\nMemoria ram: " + ram +"\nAlmacenamiento:  "+ almacenamiento+ "\nBoard: "+ board+
+                "\nFuente de poder: "+ fuentePoder+ "\nGPU:" + gpu + "\n");
+    }
+    
+}
